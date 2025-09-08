@@ -1,4 +1,4 @@
-package br.com.mottu.challange.dto.motorcycle;
+package br.com.mottu.challange.domain.dto.motorcycle;
 
 import jakarta.validation.constraints.NotNull;
 

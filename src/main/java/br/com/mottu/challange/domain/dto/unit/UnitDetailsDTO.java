@@ -1,6 +1,6 @@
-package br.com.mottu.challange.dto.unit;
+package br.com.mottu.challange.domain.dto.unit;
 
-import br.com.mottu.challange.entity.Unit;
+import br.com.mottu.challange.domain.entity.Unit;
 
 public record UnitDetailsDTO(Long id,
                              String name,

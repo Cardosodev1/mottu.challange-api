@@ -1,9 +1,9 @@
 package br.com.mottu.challange.controller;
 
-import br.com.mottu.challange.dto.device.DeviceDTO;
-import br.com.mottu.challange.dto.device.DeviceDetailsDTO;
-import br.com.mottu.challange.entity.Device;
-import br.com.mottu.challange.repository.DeviceRepository;
+import br.com.mottu.challange.domain.dto.device.DeviceDTO;
+import br.com.mottu.challange.domain.dto.device.DeviceDetailsDTO;
+import br.com.mottu.challange.domain.entity.Device;
+import br.com.mottu.challange.domain.repository.DeviceRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

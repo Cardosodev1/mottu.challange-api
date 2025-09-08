@@ -1,6 +1,6 @@
-package br.com.mottu.challange.repository;
+package br.com.mottu.challange.domain.repository;
 
-import br.com.mottu.challange.entity.Motorcycle;
+import br.com.mottu.challange.domain.entity.Motorcycle;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MotorcycleRepository extends JpaRepository<Motorcycle, Long> {

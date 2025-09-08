@@ -1,6 +1,6 @@
-package br.com.mottu.challange.repository;
+package br.com.mottu.challange.domain.repository;
 
-import br.com.mottu.challange.entity.Unit;
+import br.com.mottu.challange.domain.entity.Unit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UnitRepository extends JpaRepository<Unit, Long> {

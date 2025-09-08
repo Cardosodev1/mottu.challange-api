@@ -1,6 +1,6 @@
-package br.com.mottu.challange.dto.employee;
+package br.com.mottu.challange.domain.dto.employee;
 
-import br.com.mottu.challange.entity.Employee;
+import br.com.mottu.challange.domain.entity.Employee;
 
 public record EmployeeDetailsDTO(Long id,
                                  String name,

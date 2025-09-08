@@ -1,6 +1,6 @@
-package br.com.mottu.challange.dto.device;
+package br.com.mottu.challange.domain.dto.device;
 
-import br.com.mottu.challange.entity.StatusColor;
+import br.com.mottu.challange.domain.entity.StatusColor;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 

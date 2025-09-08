@@ -1,7 +1,7 @@
-package br.com.mottu.challange.dto.device;
+package br.com.mottu.challange.domain.dto.device;
 
-import br.com.mottu.challange.entity.Device;
-import br.com.mottu.challange.entity.StatusColor;
+import br.com.mottu.challange.domain.entity.Device;
+import br.com.mottu.challange.domain.entity.StatusColor;
 
 public record DeviceDetailsDTO(Long id,
                                String code,

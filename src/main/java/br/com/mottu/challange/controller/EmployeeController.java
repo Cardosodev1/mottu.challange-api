@@ -1,10 +1,10 @@
 package br.com.mottu.challange.controller;
 
-import br.com.mottu.challange.dto.employee.EmployeeDTO;
-import br.com.mottu.challange.dto.employee.EmployeeDetailsDTO;
-import br.com.mottu.challange.dto.employee.EmployeeUpdateDTO;
-import br.com.mottu.challange.entity.Employee;
-import br.com.mottu.challange.repository.EmployeeRepository;
+import br.com.mottu.challange.domain.dto.employee.EmployeeDTO;
+import br.com.mottu.challange.domain.dto.employee.EmployeeDetailsDTO;
+import br.com.mottu.challange.domain.dto.employee.EmployeeUpdateDTO;
+import br.com.mottu.challange.domain.entity.Employee;
+import br.com.mottu.challange.domain.repository.EmployeeRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

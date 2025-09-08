@@ -1,4 +1,4 @@
-package br.com.mottu.challange.dto.employee;
+package br.com.mottu.challange.domain.dto.employee;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

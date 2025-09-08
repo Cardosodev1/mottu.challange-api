@@ -1,21 +1,16 @@
-package br.com.mottu.challange.dto.unit;
+package br.com.mottu.challange.domain.dto.yard;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record UnitDTO(
+public record YardDTO(
 
         @NotNull
         @NotBlank
         String name,
 
         @NotNull
-        @NotBlank
-        String address,
-
-        @NotNull
-        @NotBlank
-        String neighborhood
+        Long idUnit
 
 ) {
 }

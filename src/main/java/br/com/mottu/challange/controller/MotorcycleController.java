@@ -1,10 +1,10 @@
 package br.com.mottu.challange.controller;
 
-import br.com.mottu.challange.dto.motorcycle.MotorcycleDTO;
-import br.com.mottu.challange.dto.motorcycle.MotorcycleDetailsDTO;
-import br.com.mottu.challange.dto.motorcycle.MotorcycleUpdateDTO;
-import br.com.mottu.challange.entity.Motorcycle;
-import br.com.mottu.challange.repository.MotorcycleRepository;
+import br.com.mottu.challange.domain.dto.motorcycle.MotorcycleDTO;
+import br.com.mottu.challange.domain.dto.motorcycle.MotorcycleDetailsDTO;
+import br.com.mottu.challange.domain.dto.motorcycle.MotorcycleUpdateDTO;
+import br.com.mottu.challange.domain.entity.Motorcycle;
+import br.com.mottu.challange.domain.repository.MotorcycleRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

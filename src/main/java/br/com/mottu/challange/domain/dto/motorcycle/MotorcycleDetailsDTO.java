@@ -1,7 +1,7 @@
-package br.com.mottu.challange.dto.motorcycle;
+package br.com.mottu.challange.domain.dto.motorcycle;
 
 
-import br.com.mottu.challange.entity.Motorcycle;
+import br.com.mottu.challange.domain.entity.Motorcycle;
 
 public record MotorcycleDetailsDTO(Long id,
                                    String license,

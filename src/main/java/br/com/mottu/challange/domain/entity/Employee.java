@@ -1,7 +1,7 @@
-package br.com.mottu.challange.entity;
+package br.com.mottu.challange.domain.entity;
 
-import br.com.mottu.challange.dto.employee.EmployeeDTO;
-import br.com.mottu.challange.dto.employee.EmployeeUpdateDTO;
+import br.com.mottu.challange.domain.dto.employee.EmployeeDTO;
+import br.com.mottu.challange.domain.dto.employee.EmployeeUpdateDTO;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;

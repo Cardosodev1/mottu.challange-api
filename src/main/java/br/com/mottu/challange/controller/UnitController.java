@@ -1,9 +1,9 @@
 package br.com.mottu.challange.controller;
 
-import br.com.mottu.challange.dto.unit.UnitDTO;
-import br.com.mottu.challange.dto.unit.UnitDetailsDTO;
-import br.com.mottu.challange.entity.Unit;
-import br.com.mottu.challange.repository.UnitRepository;
+import br.com.mottu.challange.domain.dto.unit.UnitDTO;
+import br.com.mottu.challange.domain.dto.unit.UnitDetailsDTO;
+import br.com.mottu.challange.domain.entity.Unit;
+import br.com.mottu.challange.domain.repository.UnitRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

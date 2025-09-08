@@ -1,4 +1,4 @@
-package br.com.mottu.challange.entity;
+package br.com.mottu.challange.domain.entity;
 
 public enum StatusColor {
     YELLOW,     // Pending

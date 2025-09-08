@@ -1,7 +1,7 @@
-package br.com.mottu.challange.dto.yard;
+package br.com.mottu.challange.domain.dto.yard;
 
 
-import br.com.mottu.challange.entity.Yard;
+import br.com.mottu.challange.domain.entity.Yard;
 
 public record YardDetailsDTO(Long id,
                              String name,
