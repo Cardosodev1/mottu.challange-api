@@ -10,11 +10,15 @@ Este projeto é uma API desenvolvida como parte de um desafio proposto pela Mott
 
 ## 🚀 Tecnologias Utilizadas
 
-- Java 17
+- Java 21
 - Spring Boot
+- Spring Security
 - Maven
 - JPA/Hibernate
 - H2 Database (para testes)
+- Oracle SQL (para prod)
+- Flyway
+- Thymeleaf
 - Lombok
 
 ## 📁 Estrutura do Projeto
@@ -22,15 +26,18 @@ Este projeto é uma API desenvolvida como parte de um desafio proposto pela Mott
 O projeto está dividido nas seguintes camadas:
 
 - `controller`: Camada responsável pelos endpoints da API.
-- `dto`: Objetos de transferência de dados entre camadas.
-- `entity`: Entidades que representam as tabelas do banco de dados.
-- `repository`: Interfaces responsáveis pela persistência de dados.
+- `domain`: Contém todas as regras de negócio e entidades da aplicação.
+   - `dto`: Objetos de transferência de dados entre camadas.
+   - `entity`: Entidades que representam as tabelas do banco de dados.
+   - `repository`: Interfaces responsáveis pela persistência de dados.
+   - `service`: Camada onde se concentra a lógica de negócio da aplicação.
+- `infra`: Camada de infraestrutura e configurações transversais.
 
 ## ▶️ Como Executar o Projeto
 
 ### Pré-requisitos
 
-- Java 17 instalado
+- Java 21 instalado
 - Maven instalado
 
 ### Passos para rodar localmente
