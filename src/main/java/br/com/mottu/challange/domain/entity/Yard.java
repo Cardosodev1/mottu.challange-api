@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 public class Yard {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "yard_seq_generator")
+    @SequenceGenerator(name = "yard_seq_generator", sequenceName = "yard_seq", allocationSize = 1)
     private Long id;
 
     private String name;

@@ -19,7 +19,8 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_seq_generator")
+    @SequenceGenerator(name = "user_seq_generator", sequenceName = "user_seq", allocationSize = 1)
     private Long id;
 
     private String login;
@@ -33,6 +34,11 @@ public class User implements UserDetails {
     @Override
     public String getUsername() {
         return login;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 
     @Override

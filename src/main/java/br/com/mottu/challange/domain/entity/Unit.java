@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 public class Unit {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "unit_seq_generator")
+    @SequenceGenerator(name = "unit_seq_generator", sequenceName = "unit_seq", allocationSize = 1)
     private Long id;
 
     private String name;
