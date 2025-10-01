@@ -26,6 +26,7 @@ public class Motorcycle {
     private String model;
 
     @OneToOne
+    @JoinColumn(name = "id_device")
     private Device device;
 
     public Motorcycle(Long idMotorcycle) {

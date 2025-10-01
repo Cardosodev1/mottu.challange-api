@@ -31,6 +31,7 @@ public class Device {
     private Yard yard;
 
     @OneToOne
+    @JoinColumn(name = "id_motorcycle")
     private Motorcycle motorcycle;
 
     public Device(Long idDevice) {
