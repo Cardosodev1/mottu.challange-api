@@ -7,10 +7,12 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "tb_yards")
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Yard {
