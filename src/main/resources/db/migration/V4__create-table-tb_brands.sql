@@ -1,0 +1,6 @@
+CREATE TABLE tb_brands (
+
+    id NUMBER PRIMARY KEY,
+    name VARCHAR2(255) NOT NULL UNIQUE
+
+);
