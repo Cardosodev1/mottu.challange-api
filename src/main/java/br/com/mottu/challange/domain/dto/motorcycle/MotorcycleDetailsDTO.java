@@ -7,12 +7,16 @@ public record MotorcycleDetailsDTO(Long id,
                                    String license,
                                    String chassis,
                                    String engine,
-                                   String brand,
-                                   String model,
+                                   Long idModel,
                                    Long idDevice) {
 
     public MotorcycleDetailsDTO(Motorcycle motorcycle) {
-        this(motorcycle.getId(), motorcycle.getLicense(), motorcycle.getChassis(), motorcycle.getEngine(), motorcycle.getBrand(), motorcycle.getModel(), motorcycle.getDevice() != null ? motorcycle.getDevice().getId() : null);
+        this(motorcycle.getId(),
+             motorcycle.getLicense(),
+             motorcycle.getChassis(),
+             motorcycle.getEngine(),
+             motorcycle.getModel() != null ? motorcycle.getModel().getId() : null,
+             motorcycle.getDevice() != null ? motorcycle.getDevice().getId() : null);
     }
 
 }

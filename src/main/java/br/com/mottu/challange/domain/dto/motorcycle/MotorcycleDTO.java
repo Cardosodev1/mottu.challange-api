@@ -17,13 +17,7 @@ public record MotorcycleDTO(
         @NotBlank
         String engine,
 
-        @NotNull
-        @NotBlank
-        String brand,
-
-        @NotNull
-        @NotBlank
-        String model,
+        Long idModel,
 
         Long idDevice
 

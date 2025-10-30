@@ -1,7 +1,7 @@
 package br.com.mottu.challange.domain.entity;
 
 import br.com.mottu.challange.domain.dto.motorcycle.MotorcycleDTO;
-import br.com.mottu.challange.domain.dto.motorcycle.MotorcycleUpdateDTO;
+import br.com.mottu.challange.domain.dto.motorcycle.MotorcycleDetailsDTO;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -25,8 +25,10 @@ public class Motorcycle {
     private String license;
     private String chassis;
     private String engine;
-    private String brand;
-    private String model;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_model")
+    private Model model;
 
     @OneToOne
     @JoinColumn(name = "id_device")
@@ -40,25 +42,29 @@ public class Motorcycle {
         this.license = motorcycleDTO.license();
         this.chassis = motorcycleDTO.chassis();
         this.engine = motorcycleDTO.engine();
-        this.brand = motorcycleDTO.brand();
-        this.model = motorcycleDTO.model();
+        if (motorcycleDTO.idModel() != null) {
+            this.device = new Device(motorcycleDTO.idDevice());
+        }
         if (motorcycleDTO.idDevice() != null) {
             this.device = new Device(motorcycleDTO.idDevice());
         }
     }
 
-    public void update(@Valid MotorcycleUpdateDTO motorcycleUpdateDTO) {
-        if (motorcycleUpdateDTO.license() != null) {
-            this.license = motorcycleUpdateDTO.license();
+    public void update(@Valid MotorcycleDetailsDTO motorcycleDetailsDTO) {
+        if (motorcycleDetailsDTO.license() != null) {
+            this.license = motorcycleDetailsDTO.license();
         }
-        if (motorcycleUpdateDTO.chassis() != null) {
-            this.chassis = motorcycleUpdateDTO.chassis();
+        if (motorcycleDetailsDTO.chassis() != null) {
+            this.chassis = motorcycleDetailsDTO.chassis();
         }
-        if (motorcycleUpdateDTO.engine() != null) {
-            this.engine = motorcycleUpdateDTO.engine();
+        if (motorcycleDetailsDTO.engine() != null) {
+            this.engine = motorcycleDetailsDTO.engine();
         }
-        if (motorcycleUpdateDTO.idDevice() != null) {
-            this.device = new Device(motorcycleUpdateDTO.idDevice());
+        if (motorcycleDetailsDTO.idModel() != null) {
+            this.model = new Model(model.getId());
+        }
+        if (motorcycleDetailsDTO.idDevice() != null) {
+            this.device = new Device(motorcycleDetailsDTO.idDevice());
         }
     }
 }
