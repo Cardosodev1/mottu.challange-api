@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="${pageTitle}">Formulário de Modelo</title>
+</head>
+<body>
+
+<section layout:fragment="content">
+    <h1 th:text="${pageTitle}">Cadastrar / Editar Modelo</h1>
+
+    <form th:action="@{/web/models/save}" th:object="${modelEntity}" method="post" class="form-container">
+
+        <input type="hidden" th:field="*{id}" />
+
+        <div class="form-group">
+            <label for="name">Nome do Modelo:</label>
+            <input type="text" id="name" th:field="*{name}" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="brand">Marca:</label>
+            <select id="brand" th:field="*{brand.id}" class="form-control" required>
+                <option value="">Selecione uma Marca</option>
+                <option th:each="br : ${allBrands}"
+                        th:value="${br.id}"
+                        th:text="${br.name}">
+                    Marca
+                </option>
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a th:href="@{/web/models}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</section>
+
+</body>
+</html>

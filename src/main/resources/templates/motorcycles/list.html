@@ -32,8 +32,8 @@
         <tr th:each="moto : ${motorcyclePage.content}">
             <td th:text="${moto.id}">1</td>
             <td th:text="${moto.license}">ABC-1234</td>
-            <td th:text="${moto.brand}">Honda</td>
-            <td th:text="${moto.model}">CG 160</td>
+            <td th:text="${moto.model?.brand?.name}">Honda</td>
+            <td th:text="${moto.model?.name}">CG 160</td>
             <td>
                 <span th:if="${moto.device != null}" th:text="${moto.device.code}">DEV001</span>
                 <span th:if="${moto.device == null}" class="text-muted">N/A</span>

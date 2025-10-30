@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Listagem de Marcas</title>
+</head>
+<body>
+
+<section layout:fragment="content">
+
+    <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
+    <div th:if="${message_error}" class="alert alert-error" th:text="${message_error}"></div>
+
+    <div class="header-list">
+        <h1>Marcas Cadastradas</h1>
+        <a th:href="@{/web/brands/new}" class="btn btn-primary">Cadastrar Nova Marca</a>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="brand : ${brandPage.content}">
+            <td th:text="${brand.id}">1</td>
+            <td th:text="${brand.name}">Honda</td>
+            <td>
+                <a th:href="@{/web/brands/edit/{id}(id=${brand.id})}" class="btn btn-secondary btn-sm">Editar</a>
+                <a th:href="@{/web/brands/delete/{id}(id=${brand.id})}" class="btn btn-danger btn-sm"
+                   onclick="return confirm('Tem certeza? Modelos associados podem impedir a exclusão.');">Excluir</a>
+            </td>
+        </tr>
+        <tr th:if="${brandPage.empty}">
+            <td colspan="3" style="text-align: center;">Nenhuma marca encontrada.</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${brandPage.totalPages > 1}" class="pagination-controls">
+        <a th:if="${brandPage.hasPrevious()}"
+           th:href="@{/web/brands(page=${brandPage.number - 1}, size=${brandPage.size})}"
+           class="btn btn-secondary">
+            &laquo; Anterior
+        </a>
+        <span class="page-info">
+            Página <strong th:text="${brandPage.number + 1}">1</strong> de <strong th:text="${brandPage.totalPages}">1</strong>
+        </span>
+        <a th:if="${brandPage.hasNext()}"
+           th:href="@{/web/brands(page=${brandPage.number + 1}, size=${brandPage.size})}"
+           class="btn btn-secondary">
+            Próxima &raquo;
+        </a>
+    </div>
+</section>
+
+</body>
+</html>
