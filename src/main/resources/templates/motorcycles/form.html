@@ -41,6 +41,16 @@
         </div>
 
         <div class="form-group">
+            <label for="statusColor">Status:</label>
+            <select id="statusColor" th:field="*{statusColor}" class="form-control" required>
+                <option value="">Selecione um Status</option>
+                <option th:each="status : ${allStatusColors}"
+                        th:value="${status}"
+                        th:text="${status}">Status
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
             <label for="device">Dispositivo Associado:</label>
             <select id="device" th:field="*{device.id}" class="form-control">
                 <option value="">Nenhum</option>

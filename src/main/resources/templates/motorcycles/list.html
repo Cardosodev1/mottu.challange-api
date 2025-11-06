@@ -25,6 +25,7 @@
             <th>Marca</th>
             <th>Modelo</th>
             <th>Dispositivo</th>
+            <th>Status</th>
             <th>Ações</th>
         </tr>
         </thead>
@@ -38,6 +39,7 @@
                 <span th:if="${moto.device != null}" th:text="${moto.device.code}">DEV001</span>
                 <span th:if="${moto.device == null}" class="text-muted">N/A</span>
             </td>
+            <td th:text="${moto.statusColor}">YELLOW</td>
             <td>
                 <a th:href="@{/web/motorcycles/edit/{id}(id=${moto.id})}" class="btn btn-secondary btn-sm">Editar</a>
                 <a th:href="@{/web/motorcycles/delete/{id}(id=${moto.id})}" class="btn btn-danger btn-sm"
@@ -45,7 +47,7 @@
             </td>
         </tr>
         <tr th:if="${motorcyclePage.empty}">
-            <td colspan="6" style="text-align: center;">Nenhuma moto encontrada.</td>
+            <td colspan="7" style="text-align: center;">Nenhuma moto encontrada.</td>
         </tr>
         </tbody>
     </table>
