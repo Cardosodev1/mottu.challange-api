@@ -2,7 +2,8 @@ CREATE TABLE tb_devices (
 
     id NUMBER PRIMARY KEY,
     code VARCHAR2(100) NOT NULL,
-    status_color VARCHAR2(50) CHECK (status_color IN ('YELLOW','BLUE','ORANGE','RED','GRAY','DARK_GREEN','PINK','LIGHT_GREEN')),
+    distance NUMBER,
+    reading_timestamp TIMESTAMP,
     active NUMBER(1) CHECK (active IN (0,1)),
     id_yard NUMBER NOT NULL,
     id_motorcycle NUMBER UNIQUE,

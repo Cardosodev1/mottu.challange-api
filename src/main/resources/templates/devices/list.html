@@ -21,7 +21,6 @@
         <tr>
             <th>ID</th>
             <th>Código</th>
-            <th>Status</th>
             <th>Ativo</th>
             <th>Pátio</th>
             <th>Moto</th>
@@ -32,16 +31,17 @@
         <tr th:each="device : ${devicePage.content}">
             <td th:text="${device.id}">1</td>
             <td th:text="${device.code}">DEV001</td>
-            <td th:text="${device.statusColor}">YELLOW</td>
             <td th:text="${device.active ? 'Sim' : 'Não'}">Sim</td>
-            <td th:text="${device.yard?.name}">Pátio A</td> <td th:text="${device.motorcycle?.license}">N/A</td> <td>
-            <a th:href="@{/web/devices/edit/{id}(id=${device.id})}" class="btn btn-secondary btn-sm">Editar</a>
-            <a th:href="@{/web/devices/delete/{id}(id=${device.id})}" class="btn btn-danger btn-sm"
-               onclick="return confirm('Tem certeza que deseja excluir este dispositivo?');">Excluir</a>
-        </td>
+            <td th:text="${device.yard?.name}">Pátio A</td>
+            <td th:text="${device.motorcycle?.license}">N/A</td>
+            <td>
+                <a th:href="@{/web/devices/edit/{id}(id=${device.id})}" class="btn btn-secondary btn-sm">Editar</a>
+                <a th:href="@{/web/devices/delete/{id}(id=${device.id})}" class="btn btn-danger btn-sm"
+                   onclick="return confirm('Tem certeza que deseja excluir este dispositivo?');">Excluir</a>
+            </td>
         </tr>
         <tr th:if="${devicePage.empty}">
-            <td colspan="7" style="text-align: center;">Nenhum dispositivo encontrado.</td>
+            <td colspan="6" style="text-align: center;">Nenhum dispositivo encontrado.</td>
         </tr>
         </tbody>
     </table>

@@ -9,6 +9,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "tb_devices")
 @Getter
@@ -24,8 +26,8 @@ public class Device {
 
     private String code;
 
-    @Enumerated(EnumType.STRING)
-    private StatusColor statusColor;
+    private Double distance;
+    private LocalDateTime reading_timestamp;
 
     private Boolean active;
 
@@ -43,7 +45,8 @@ public class Device {
 
     public Device(DeviceDTO deviceDTO) {
         this.code = deviceDTO.code();
-        this.statusColor = deviceDTO.statusColor();
+        this.distance = deviceDTO.distance();
+        this.reading_timestamp = deviceDTO.reading_timestamp();
         this.active = deviceDTO.active();
         this.yard = new Yard(deviceDTO.idYard());
         if (deviceDTO.idMotorcycle() != null) {
@@ -55,8 +58,11 @@ public class Device {
         if (deviceDetailsDTO.code() != null) {
             this.code = deviceDetailsDTO.code();
         }
-        if (deviceDetailsDTO.statusColor() != null) {
-            this.statusColor = deviceDetailsDTO.statusColor();
+        if (deviceDetailsDTO.distance() != null) {
+            this.distance = deviceDetailsDTO.distance();
+        }
+        if (deviceDetailsDTO.reading_timestamp() != null) {
+            this.reading_timestamp = deviceDetailsDTO.reading_timestamp();
         }
         if (deviceDetailsDTO.active() != null) {
             this.active = deviceDetailsDTO.active();

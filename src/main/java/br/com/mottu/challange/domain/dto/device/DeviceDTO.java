@@ -1,8 +1,9 @@
 package br.com.mottu.challange.domain.dto.device;
 
-import br.com.mottu.challange.domain.entity.StatusColor;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDateTime;
 
 public record DeviceDTO(
 
@@ -10,8 +11,9 @@ public record DeviceDTO(
         @NotBlank
         String code,
 
-        @NotNull
-        StatusColor statusColor,
+        Double distance,
+
+        LocalDateTime reading_timestamp,
 
         Boolean active,
 
