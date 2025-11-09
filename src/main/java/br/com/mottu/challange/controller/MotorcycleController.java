@@ -25,11 +25,11 @@ public class MotorcycleController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid MotorcycleDTO motorcycleDTO, UriComponentsBuilder uriBuilder) {
         var motorcycle = new Motorcycle(motorcycleDTO);
-        repository.save(motorcycle);
+        var savedMotorcycle = repository.save(motorcycle);
 
-        var uri = uriBuilder.path("/motorcycles/{id}").buildAndExpand(motorcycle.getId()).toUri();
+        var uri = uriBuilder.path("/motorcycles/{id}").buildAndExpand(savedMotorcycle.getId()).toUri();
 
-        return ResponseEntity.created(uri).body(new MotorcycleDetailsDTO(motorcycle));
+        return ResponseEntity.created(uri).body(new MotorcycleDetailsDTO(savedMotorcycle));
     }
 
     @GetMapping
